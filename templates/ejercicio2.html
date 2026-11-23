@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Formulario de Nombres</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div>
+<h2>Formulario de Nombres</h2>
+<form method="POST">
+<div>
+<label for="nombre1">Nombre 1:</label><br>
+<input type="text" id="nombre1" name="nombre1">
+</div>
+<div>
+<label for="nombre2">Nombre 2:</label><br>
+<input type="text" id="nombre2" name="nombre2">
+</div>
+<div>
+<label for="nombre3">Nombre 3:</label><br>
+<input type="text" id="nombre3" name="nombre3">
+</div>
+<br>
+<div>
+<input type="submit" value="Enviar">
+</div>
+</form>
+
+{% if nombre_largo is defined %}
+<div>
+<p>{{ mensaje }}</p>
+<p>{{ nombre_largo }} con {{ cantidad }} caracteres.</p>
+</div>
+{% endif %}
+</div>
+</body>
+</html>
